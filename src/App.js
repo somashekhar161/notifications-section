@@ -15,14 +15,28 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ bgcolor: "#282929",minHeight: "100vh", }}>
-        <Grid container spacing={2}>
+      <Box sx={{ bgcolor: "#282929" }}>
+        <Grid container spacing={0}>
           <Grid item xs={12} md={6} lg={8}></Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <Routes>
-              <Route path="/" element={<Notification />} />
-              <Route path="/Requests" element={<Requests />} />
-            </Routes>
+            <Box
+              sx={{
+                minHeight: "100vh",
+                height: "100vh",
+                backgroundColor: "#111011",
+                padding: "0px 20px",
+                overflowY: "scroll",
+                "&::-webkit-scrollbar": {
+                  width: "0",
+                  height: "0",
+                },
+              }}
+            >
+              <Routes>
+                <Route path="/" element={<Notification />} />
+                <Route path="/Requests" element={<Requests />} />
+              </Routes>
+            </Box>
           </Grid>
         </Grid>
       </Box>

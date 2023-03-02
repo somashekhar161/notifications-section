@@ -17,9 +17,9 @@ export default function Profiles({picSrc, Name="Name", subName="subName" }) {
           height: "60px;",
           borderRadius: "50px",
           backgroundColor: "blue",
-          marginRight:"19px"
+          marginRight:"12px"
         }}
-      ><img src={require(`${picSrc}`)} alt="picture"/></Box>
+      ><img src={require(`${picSrc}`)} alt="profilePicture"/></Box>
       <Box>
         {" "}
         <Typography varient="body1" sx={{fontSize:"20px" }} >
