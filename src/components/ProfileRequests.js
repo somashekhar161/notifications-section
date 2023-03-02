@@ -5,7 +5,7 @@ import Divider from "@mui/material/Divider";
 
 export default function ProfileRequests() {return(
     <>
-      <Link to="/Requests" style={{ color: "#FFF", width: "100%" }}>
+      <Link to="/Requests" style={{ color: "#FFF", width: "100%", textDecoration: "none" }}>
         <Stack
           direction="row"
           justifyContent="space-between"

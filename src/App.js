@@ -17,14 +17,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box sx={{ bgcolor: "#282929" }}>
         <Grid container spacing={0}>
-          <Grid item xs={12} md={6} lg={8}></Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} xl={6}></Grid>
+          <Grid item xs={12} md={6} xl={6}>
             <Box
               sx={{
                 minHeight: "100vh",
                 height: "100vh",
                 backgroundColor: "#111011",
-                padding: "0px 20px",
+                padding: { xs: "0px 20px", md: "0px 30px" },
                 overflowY: "scroll",
                 "&::-webkit-scrollbar": {
                   width: "0",
