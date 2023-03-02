@@ -1,10 +1,10 @@
 
 import { Box, Stack, Button, Typography } from "@mui/material";
-import { useState } from "react";
+
 
 import Modal from "@mui/material/Modal";
 
-export default function ConfirmModal({open,handleOpen,handleClose}){
+export default function ConfirmModal({open,handleClose}){
 
   const style = {
     top: "50%",
@@ -21,6 +21,7 @@ export default function ConfirmModal({open,handleOpen,handleClose}){
     borderRadius: "10px;",
     p: "45px",
   };
+
     return(
         <Modal
         open={open}
@@ -82,7 +83,6 @@ export default function ConfirmModal({open,handleOpen,handleClose}){
                     fontSize: { sm: "14px", md: "18px;" },
                     fontFamily: "Inter",
                   }}
-
                   onClick={handleClose}
                 >
                   Accept

@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom";
 import { Box, Stack, Button, Typography } from "@mui/material";
 import Request from "./Request";
-import { useState } from "react";
+
 import ConfirmModal from "./ConfirmModal";
 
-
-
-export default function Requests() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  
+export default function Requests({
+  handleManage,
+  manage,
+  handleSelectAll,
+  selectAll,
+  open,
+  handleOpen,
+  handleClose,
+}) {
   return (
     <>
+      <ConfirmModal
+        open={open}
+        handleOpen={handleOpen}
+        handleClose={handleClose}
+      />
       <Stack
         direction="column"
         justifyContent="flex-start"
@@ -34,7 +41,7 @@ export default function Requests() {
                 alignItems="center"
                 spacing={2}
               >
-                <Link to="/">
+                <Link to="/" onClick={manage && handleManage}>
                   <img src={require(`./arrow_left.png`)} alt="go-back" />
                 </Link>
                 <Typography variant="body1" sx={{ fontSize: "20px" }}>
@@ -46,13 +53,44 @@ export default function Requests() {
               variant="body1"
               sx={{ fontSize: "18px", fontFamily: "Poppins" }}
             >
-              Manage
+              {!manage ? (
+                <Button
+                  variant="text"
+                  sx={{
+                    color: "#fff",
+                    fontSize: { sm: "14px", md: "18px;" },
+                    fontFamily: "Inter",
+                  }}
+                  onClick={handleManage}
+                >
+                  Manage
+                </Button>
+              ) : (
+                <Button
+                  variant="text"
+                  sx={{
+                    color: "#fff",
+                    fontSize: { sm: "14px", md: "18px;" },
+                    fontFamily: "Inter",
+                  }}
+                  onClick={handleSelectAll}
+                >
+                  Select all
+                </Button>
+              )}
             </Typography>
           </Stack>
         </Box>
-        <Request confirm={handleOpen} />
-        
-        <ConfirmModal open={open} handleOpen={handleOpen} handleClose={handleClose}/>
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
+        <Request selectAll={selectAll} manage={manage} confirm={handleOpen} />
       </Stack>
     </>
   );

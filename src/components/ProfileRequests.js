@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Profiles from "./Profile";
 import Divider from "@mui/material/Divider";
-
+//shows request count at start 
 export default function ProfileRequests() {return(
     <>
       <Link to="/Requests" style={{ color: "#FFF", width: "100%", textDecoration: "none" }}>

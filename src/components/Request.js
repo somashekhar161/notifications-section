@@ -1,8 +1,16 @@
 import { Box, Button, Stack } from "@mui/material";
 import Profiles from "./Profile";
-import Checkbox from '@mui/material/Checkbox';
+import Checkbox from "@mui/material/Checkbox";
+import { useEffect, useState } from "react";
 
-export default function Request({confirm}) {
+export default function Request({ confirm, manage, selectAll }) {
+  const [checked, setChecked] = useState(false);
+useEffect(()=>{
+    setChecked(selectAll)
+},[selectAll])
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
   return (
     <>
       <Box sx={{ width: "100%" }}>
@@ -23,47 +31,52 @@ export default function Request({confirm}) {
             alignItems="center"
             spacing={2}
           >
-            <Button
-              className="btn-accept"
-              sx={{
-                color: "#fff",
-                fontSize: { xs: "8px", md: "16px" },
-                fontFamily: "Poppins",
-                background: "#D40E3D;",
-                boxShadow: " inset 0px 4px 4px rgba(0, 0, 0, 0.25);",
-                backdropFilter: " blur(12.5px);",
+            {!manage ? (
+              <>
+                <Button
+                  className="btn-accept"
+                  sx={{
+                    color: "#fff",
+                    fontSize: { xs: "8px", md: "16px" },
+                    fontFamily: "Poppins",
+                    background: "#D40E3D;",
+                    boxShadow: " inset 0px 4px 4px rgba(0, 0, 0, 0.25);",
+                    backdropFilter: " blur(12.5px);",
 
-                borderRadius: "5px;",
-                ":hover": {
-                  background: "#D40E3D50;",
-                  color: "white",
-                },
-              }}
-              onClick={confirm}
-            >
-              Accept
-            </Button>
-            <Button
-              sx={{
-                color: "#fff",
-                fontSize: { xs: "8px", md: "16px" },
-                fontFamily: "Poppins",
-                background:
-                  " linear-gradient(180deg, rgba(255, 44, 44, 0.1) 0%, rgba(244, 65, 65, 0.0514914) 48.51%, rgba(253, 34, 34, 0.1) 100%);",
-                border: " 1px solid #FD2222;",
-                boxShadow: "inset 0px 4px 25px rgba(255, 255, 255, 0.25);",
-                backdropFilter: "blur(12.5px);",
+                    borderRadius: "5px;",
+                    ":hover": {
+                      background: "#D40E3D50;",
+                      color: "white",
+                    },
+                  }}
+                  onClick={confirm}
+                >
+                  Accept
+                </Button>
+                <Button
+                  sx={{
+                    color: "#fff",
+                    fontSize: { xs: "8px", md: "16px" },
+                    fontFamily: "Poppins",
+                    background:
+                      " linear-gradient(180deg, rgba(255, 44, 44, 0.1) 0%, rgba(244, 65, 65, 0.0514914) 48.51%, rgba(253, 34, 34, 0.1) 100%);",
+                    border: " 1px solid #FD2222;",
+                    boxShadow: "inset 0px 4px 25px rgba(255, 255, 255, 0.25);",
+                    backdropFilter: "blur(12.5px);",
 
-                borderRadius: "5px;",
-                ":hover": {
-                  background: "#FD222250;",
-                  color: "white",
-                },
-              }}
-            >
-              Ignore
-            </Button>
-            <Checkbox />
+                    borderRadius: "5px;",
+                    ":hover": {
+                      background: "#FD222250;",
+                      color: "white",
+                    },
+                  }}
+                >
+                  Ignore
+                </Button>
+              </>
+            ) : (
+              <Checkbox checked={checked} onChange={handleChange} />
+            )}
           </Stack>
         </Stack>
       </Box>
