@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Routes, Route,useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import Notification from "./components/Notification";
 import Requests from "./components/Requests";
@@ -10,16 +10,15 @@ import { useState } from "react";
 import { Box, Stack, Button } from "@mui/material";
 
 function App() {
-  
-
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
-   
   };
-  const handleClose = () => {setOpen(false);
-    navigate("/");}
+  const handleClose = () => {
+    setOpen(false);
+    navigate("/");
+  };
   const [manage, setManage] = useState(false);
   const [selectAll, setSelectAll] = useState(false);
 
@@ -37,7 +36,7 @@ function App() {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+   <ThemeProvider theme={theme}>
       <Box sx={{ bgcolor: "#282929" }}>
         <Grid container spacing={0}>
           <Grid item xs={12} md={6} xl={6}></Grid>
@@ -126,7 +125,7 @@ function App() {
           </Grid>
         </Grid>
       </Box>
-    </ThemeProvider>
+     </ThemeProvider>
   );
 }
 
