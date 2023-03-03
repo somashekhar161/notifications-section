@@ -38,6 +38,7 @@ useEffect(()=>{
                   sx={{
                     color: "#fff",
                     fontSize: { xs: "8px", md: "16px" },
+                    padding:"7px 14px",
                     fontFamily: "Poppins",
                     background: "#D40E3D;",
                     boxShadow: " inset 0px 4px 4px rgba(0, 0, 0, 0.25);",
@@ -58,6 +59,7 @@ useEffect(()=>{
                     color: "#fff",
                     fontSize: { xs: "8px", md: "16px" },
                     fontFamily: "Poppins",
+                    padding:"7px 14px",
                     background:
                       " linear-gradient(180deg, rgba(255, 44, 44, 0.1) 0%, rgba(244, 65, 65, 0.0514914) 48.51%, rgba(253, 34, 34, 0.1) 100%);",
                     border: " 1px solid #FD2222;",
